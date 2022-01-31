@@ -104,6 +104,32 @@ class UserController {
     //   address,
     // });
   }
+
+  public async getUserById(request: Request, response: Response): Promise<Response> {
+    const {
+      name,
+      lastName,
+      type,
+      document,
+      email,
+      phoneNumber,
+      birthdayDate,
+      password,
+      address,
+    } = request.body;
+
+    // const user = await this.createUserService.execute({
+    //   name,
+    //   lastName,
+    //   type,
+    //   document,
+    //   email,
+    //   phoneNumber,
+    //   birthdayDate,
+    //   password,
+    //   address,
+    // });
+  }
 }
 
 export { UserController }

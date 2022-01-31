@@ -16,6 +16,10 @@ userRouter.get('/', AuthMiddleware, async (request, response) => {
   return userController.list(request, response);
 });
 
+userRouter.post('/login', AuthMiddleware, async (request, response) => {
+  return userController.getUserById(request, response);
+});
+
 userRouter.put('/:id', AuthMiddleware, async (request, response) => {
   return userController.update(request, response);
 });

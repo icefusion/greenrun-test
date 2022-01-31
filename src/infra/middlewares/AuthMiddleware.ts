@@ -3,6 +3,7 @@ import { DecodedToken } from 'infra/types';
 import jwt from 'jsonwebtoken';
 import AppError from '../errors/AppError';
 import authConfig from '../../config';
+import knex from 'knex';
 
 async function AuthMiddleware(
   request: Request,
@@ -23,9 +24,9 @@ async function AuthMiddleware(
       authConfig.jwt.secret,
     ) as DecodedToken;
 
-    const user = await UserModel.findById(decoded.sub);
+    const user = await knex('users').where({username: ''});
 
-    request.user = { id: decoded.sub, type: user.type };
+    request.user = { id: decoded.sub };
 
     return next();
   } catch (err) {
