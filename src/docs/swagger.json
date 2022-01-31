@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Users microservice",
+    "description": "This is API rent",
+    "version": "1.0.0",
+    "contact": {
+      "email": "contato@wiliansfranco.dev"
+    }
+  },
+  "paths": {
+    
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
