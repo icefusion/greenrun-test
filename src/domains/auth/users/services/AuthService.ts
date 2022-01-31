@@ -1,7 +1,7 @@
 
 import { compare } from 'bcryptjs';
 import { GenerateTokenProvider } from 'infra/providers/GenerateTokenProvider';
-import AppError from '../../../infra/errors/AppError';
+import AppError from '../../../../infra/errors/AppError';
 import { UserRepository } from '../repositories/UserRepository';
 
 class AuthService {

@@ -1,5 +1,5 @@
 export type CreateSessionDTO = {
-  email: string;
+  username: string;
   password: string;
 };
 

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import 'dotenv/config'
-import { ITokenRequest } from '../../domains/users/interfaces/ITokenRequest';
+import { ITokenRequest } from '../../domains/auth/users/interfaces/ITokenRequest';
 
 class GenerateTokenProvider {
   public async execute({ userId, userUsername }: ITokenRequest): Promise<string> {

@@ -1,5 +1,5 @@
 
-import { AuthController } from 'domains/users/controllers/AuthController';
+import { AuthController } from 'domains/auth/users/controllers/AuthController';
 import { Router } from 'express';
 
 import { AuthMiddleware } from '../middlewares/AuthMiddleware';
