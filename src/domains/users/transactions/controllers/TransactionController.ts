@@ -35,6 +35,30 @@ class TransactionController {
 
     return response.status(200).json(result);
   }
+
+  public async getBalanceByUser(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const result = await this.transactionService.balanceByUser(id);
+
+    return response.status(200).json({total: result});
+  }
+
+  public async getTransactionsByUser(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+  
+    const result = await this.transactionService.getTransactionsByUserId(id);
+
+    return response.status(200).json(result);
+  }
+
+  public async getTransactionsByUserCategory(request: Request, response: Response): Promise<Response> {
+    const { id, category } = request.params;
+  
+    const result = await this.transactionService.getTransactionsByUserCategory(id, category);
+
+    return response.status(200).json(result);
+  }
 }
 
 export { TransactionController };

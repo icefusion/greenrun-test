@@ -15,5 +15,19 @@ transactionRouter.post('/withdraw', AuthMiddleware, async (request, response) =>
   return transactionController.withdraw(request, response);
 });
 
+transactionRouter.get('/balance/:id', async (request, response) => {
+  return transactionController.getBalanceByUser(request, response);
+});
+
+transactionRouter.get('/:id', async (request, response) => {
+  return transactionController.getTransactionsByUser(request, response);
+});
+
+transactionRouter.get('/:id/category/:category', async (request, response) => {
+  return transactionController.getTransactionsByUserCategory(request, response);
+});
+
+
+
 
 export { transactionRouter };
