@@ -3,7 +3,6 @@ import { IPlaceBetDbRequest } from '../interfaces/IPlaceBetDbRequest';
 import { format } from 'date-fns';
 import { BetUsersRepository } from '../repositories/BetUsersRepository';
 
-
 class BetUsersService {
   private betRepository = new BetRepository();
   private betUsersRepository = new BetUsersRepository();
@@ -49,14 +48,16 @@ class BetUsersService {
     odd: number,
     amount: number
   ): IPlaceBetDbRequest {
+    const actualDate = format(Date.now(), 'yyyy-MM-dd HH:mm:ss');
+
     return {
       user_id: userId,
       bet_id: betId,
       odd: odd,
       amount: amount,
       state: 'open',
-      created_at: format(Date.now(), 'yyyy-MM-dd'),
-      updated_at: format(Date.now(), 'yyyy-MM-dd'),
+      created_at: actualDate,
+      updated_at: actualDate,
       deleted: false
     };
   }
