@@ -4,7 +4,7 @@ import { IUpdateUserDbRequest } from "../interfaces/IUpdateUserDbRequest";
 
 class UserRepository {
   public async updateUserData(userId: number, request: IUpdateUserDbRequest) {
-    return await knex('user')
+    return await knex('users')
       .where("id", userId)
       .update(request);
   }

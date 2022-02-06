@@ -5,6 +5,7 @@ import { transactionRouter } from './transaction.routes';
 import { userRouter } from './user.routes';
 import { adminBetsRouter } from './admin.bets.routes';
 import { adminTransactionsRouter } from './admin.transaction.routes';
+import { adminUserRouter } from './admin.user.routes';
 
 const routes = Router();
 
@@ -13,5 +14,6 @@ routes.use('/auth', authRouter);
 routes.use('/transactions', transactionRouter);
 routes.use('/admin/bets', adminBetsRouter);
 routes.use('/admin/transactions', adminTransactionsRouter);
+routes.use('/admin/users', adminUserRouter);
 
 export { routes };
