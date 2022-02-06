@@ -4,21 +4,21 @@ import { Router } from 'express';
 
 import { AdminAuthMiddleware } from '../middlewares/AdminAuthMiddleware';
 
-const betsRouter = Router();
+const adminBetsRouter = Router();
 
 const betsController = new BetsController();
 
-betsRouter.get('/', async (request, response) => {
+adminBetsRouter.get('/', AdminAuthMiddleware, async (request, response) => {
   return betsController.getBets(request, response);
 });
 
-betsRouter.get('/event/:event', async (request, response) => {
+adminBetsRouter.get('/event/:event', AdminAuthMiddleware, async (request, response) => {
   return betsController.getBetsByEvent(request, response);
 });
 
-betsRouter.get('/sport/:sport', async (request, response) => {
+adminBetsRouter.get('/sport/:sport', AdminAuthMiddleware, async (request, response) => {
   return betsController.getBetsBySport(request, response);
 });
 
 
-export { betsRouter };
+export { adminBetsRouter };
