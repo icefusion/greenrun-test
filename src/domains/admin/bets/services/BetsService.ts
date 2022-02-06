@@ -14,6 +14,10 @@ class BetsService {
   public async getBetsBySport(sport: string): Promise<any> {
     return await this.betsRepository.getBetsBySport(sport);  
   }
+
+  public async updateBetsStatus(id: number, status: string): Promise<any> {
+    return await this.betsRepository.updateBetsStatus(id, status);  
+  }
 }
 
 export { BetsService };

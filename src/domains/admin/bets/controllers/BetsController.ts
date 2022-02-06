@@ -25,6 +25,14 @@ class BetsController {
 
     return response.status(200).json(result);
   }
+
+  public async updateBetsStatus(request: Request, response: Response): Promise<Response> {
+    const { id, status } = request.params;
+  
+    const result = await this.betsService.updateBetsStatus(id, status);
+
+    return response.status(200).json({status: result});
+  }
 }
 
 export { BetsController };

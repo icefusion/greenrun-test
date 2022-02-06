@@ -20,5 +20,9 @@ adminBetsRouter.get('/sport/:sport', AdminAuthMiddleware, async (request, respon
   return betsController.getBetsBySport(request, response);
 });
 
+adminBetsRouter.patch('/:id/status/:status', async (request, response) => {
+  return betsController.updateBetsStatus(request, response);
+});
+
 
 export { adminBetsRouter };
