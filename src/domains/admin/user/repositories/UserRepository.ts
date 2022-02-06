@@ -25,6 +25,12 @@ class UserRepository {
       return false;
     }
   }
+
+  public async updateUserData(userId: number, request: IUpdateUserDbRequest) {
+    return await knex('users')
+      .where("id", userId)
+      .update(request);
+  }
 }
 
 export { UserRepository }
