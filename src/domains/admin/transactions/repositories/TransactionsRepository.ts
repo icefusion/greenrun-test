@@ -1,6 +1,18 @@
 import { knex } from "infra/database/knex";
 
 class TransactionsRepository {
+  public async getBalanceByUserId(userId: number): Promise<any> {
+    const result = await knex('transactions')
+      .where('user_id', userId)
+      .select('category', 'amount');
+
+    if (!result) {
+      return [];
+    }
+
+    return JSON.parse(JSON.stringify(result));
+  }
+  
   public async getTransactions(): Promise<any> { 
     const result = await knex('transactions')
       .andWhere('deleted', 0)

@@ -25,6 +25,14 @@ class TransactionController {
 
     return response.status(200).json(result);
   }
+
+  public async getBalanceByUser(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const result = await this.transactionsService.balanceByUser(id);
+
+    return response.status(200).json({total: result});
+  }
 }
 
 export { TransactionController };
