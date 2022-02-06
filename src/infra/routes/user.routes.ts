@@ -1,13 +1,14 @@
 import { UserController } from 'domains/users/users/controllers/UserController';
 import { Router } from 'express';
 
-import { AuthMiddleware } from '../middlewares/AuthMiddleware';
+import { AdminAuthMiddleware } from '../middlewares/AdminAuthMiddleware';
+import { UserAuthMiddleware } from '../middlewares/UserAuthMiddleware';
 
 const userRouter = Router();
 
 const userController = new UserController();
 
-userRouter.put('/:id', AuthMiddleware, async (request, response) => {
+userRouter.put('/:id', UserAuthMiddleware, async (request, response) => {
   return userController.updateUserData(request, response);
 });
 

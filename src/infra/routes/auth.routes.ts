@@ -2,8 +2,6 @@
 import { AuthController } from 'domains/auth/users/controllers/AuthController';
 import { Router } from 'express';
 
-import { AuthMiddleware } from '../middlewares/AuthMiddleware';
-
 const authRouter = Router();
 
 const authController = new AuthController();

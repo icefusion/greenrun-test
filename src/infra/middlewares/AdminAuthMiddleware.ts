@@ -5,7 +5,7 @@ import AppError from '../errors/AppError';
 import authConfig from '../../config';
 import knex from 'knex';
 
-async function AuthMiddleware(
+async function AdminAuthMiddleware(
   request: Request,
   response: Response,
   next: NextFunction,
@@ -36,4 +36,4 @@ async function AuthMiddleware(
   }
 }
 
-export { AuthMiddleware };
+export { AdminAuthMiddleware };
