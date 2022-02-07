@@ -45,7 +45,7 @@ class TransactionService {
 
       const bet = await this.betRepository.getBetsById(request.betId);
 
-      if (!bet) {
+      if (!bet || bet.status === 'cancelled' || bet.status === 'settled') {
         return 'Not Allowed';
       }
 
@@ -84,6 +84,7 @@ class TransactionService {
 
       return 'Place Operation';
     } catch(err) {
+      console.log(err);
       return 'Not Placed';
     }
   }

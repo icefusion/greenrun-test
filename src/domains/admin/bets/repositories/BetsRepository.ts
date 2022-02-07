@@ -85,7 +85,8 @@ class BetsRepository {
         .where('event_id', id)
         .andWhere('bet_option', request.option)
         .update({
-          result: request.result
+          result: request.result,
+          status: 'settled'
         })
 
       if (!result) {
