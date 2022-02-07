@@ -5,14 +5,14 @@ class TransactionController {
   private transactionService = new TransactionService();
 
   public async deposit(request: Request, response: Response): Promise<Response> {
-    const { userId, betId, amount } = request.body;
+    const { id } = request.params;
+    const { amount } = request.body;
 
     const category = 'deposit';
 
     const result =
       await this.transactionService.place({
-        userId, 
-        betId, 
+        userId: id, 
         amount, 
         category
       });
@@ -21,13 +21,30 @@ class TransactionController {
   }
 
   public async withdraw(request: Request, response: Response): Promise<Response> {
-    const { userId, betId, amount } = request.body;
+    const { id } = request.params;
+    const { amount } = request.body;
 
     const category = 'withdraw';
 
     const result =
       await this.transactionService.place({
-        userId,
+        userId: id,
+        amount,
+        category
+      });
+
+    return response.status(200).json(result);
+  }
+
+  public async bet(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+    const { betId, amount } = request.body;
+
+    const category = 'bet';
+
+    const result =
+      await this.transactionService.bet({
+        userId: id,
         betId,
         amount,
         category

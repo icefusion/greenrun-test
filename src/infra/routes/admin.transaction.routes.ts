@@ -19,7 +19,7 @@ adminTransactionsRouter.get('/user/:id/category/:category', AdminAuthMiddleware,
   return transactionController.getTransactionsByCategory(request, response);
 });
 
-adminTransactionsRouter .get('/balance/user/:id', async (request, response) => {
+adminTransactionsRouter .get('/balance/user/:id', AdminAuthMiddleware, async (request, response) => {
   return transactionController.getBalanceByUser(request, response);
 });
 

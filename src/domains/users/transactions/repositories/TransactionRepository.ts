@@ -3,7 +3,7 @@ import { IPlaceTransactionDbRequest } from "../interfaces/IPlaceTransactionDbReq
 
 class TransactionRepository {
   public async place(request: IPlaceTransactionDbRequest) {
-    return await knex('transactions').insert(request);
+    return await knex('transactions').insert(request).returning('id');
   }
 
   public async getBalanceByUserId(userId: number): Promise<any> {
@@ -45,6 +45,10 @@ class TransactionRepository {
       );
 
     return JSON.parse(JSON.stringify(result));
+  }
+
+  public async deleteById(id: number) {
+    return await knex('transaction').where('id', id).delete();
   }
 }
 
