@@ -1,22 +1,750 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Green Run Test",
-    "description": "This is API rent",
-    "version": "1.0.0",
-    "contact": {
-      "email": "contato@wiliansfranco.dev"
+    "title": "GreenRun",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:9090"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "Transactions"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Bets"
+    },
+    {
+      "name": "Docs"
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              },
+              "example": {
+                "username": "will",
+                "password": "123mudar"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/balance/1": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Balance By User",
+        "operationId": "BalanceByUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/1": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Transactions By User",
+        "operationId": "TransactionsByUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/1/category/bet": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Transactions By User and Category",
+        "operationId": "TransactionsByUserandCategory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/user/2/deposit": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Deposit by User",
+        "operationId": "DepositbyUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepositbyUserRequest"
+              },
+              "example": {
+                "amount": 2800
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/user/2/withdraw": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Withdraw by User",
+        "operationId": "WithdrawbyUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WithdrawbyUserRequest"
+              },
+              "example": {
+                "amount": 300
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transactions/user/2/bet": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Bet by User",
+        "operationId": "BetbyUser",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BetbyUserRequest"
+              },
+              "example": {
+                "amount": 450,
+                "betId": 3
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/transactions": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get Transactions",
+        "operationId": "GetTransactions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/transactions/user/1": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get Transactions By User",
+        "operationId": "GetTransactionsByUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/transactions/user/1/category/bet": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get Transactions By User and Category",
+        "operationId": "GetTransactionsByUserandCategory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/transactions/balance/user/1": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get Balance by User",
+        "operationId": "GetBalancebyUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create Users",
+        "operationId": "CreateUsers",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUsersRequest"
+              },
+              "example": {
+                "username": "diana ",
+                "password": "123mudar",
+                "firstName": "Diana",
+                "lastName": "Oliveira",
+                "phone": "15 99232-2321",
+                "email": "diana@gmail.com",
+                "address": "Rua teste, 199 - Apto 1, Bloco A",
+                "gender": "female",
+                "birthdate": "1989-06-05",
+                "countryId": 15,
+                "city": "Sorocaba",
+                "documentId": "123.123.123-23"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/users/1/status/blocked": {
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update User Status",
+        "operationId": "UpdateUserStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create Users1",
+        "operationId": "CreateUsers1",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUsersRequest1"
+              },
+              "example": {
+                "username": "didiana ",
+                "password": "123mudar",
+                "role": "admin",
+                "firstName": "Diana",
+                "lastName": "Oliveira",
+                "phone": "15 99232-2321",
+                "email": "didiana@gmail.com",
+                "address": "Rua teste, 199 - Apto 1, Bloco A",
+                "gender": "female",
+                "birthdate": "1989-06-05",
+                "countryId": 15,
+                "city": "Sorocaba",
+                "documentId": "111.123.123-23"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/bets": {
+      "get": {
+        "tags": [
+          "Bets"
+        ],
+        "summary": "Get Bets",
+        "operationId": "GetBets",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/bets/event/1": {
+      "get": {
+        "tags": [
+          "Bets"
+        ],
+        "summary": "Get Bets ByEvent",
+        "operationId": "GetBetsByEvent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/bets/sport/basketball": {
+      "get": {
+        "tags": [
+          "Bets"
+        ],
+        "summary": "Get Bets by Sport",
+        "operationId": "GetBetsbySport",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/bets/1/status/cancelled": {
+      "patch": {
+        "tags": [
+          "Bets"
+        ],
+        "summary": "Update Bet Status",
+        "operationId": "UpdateBetStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/admin/bets/results/event/1": {
+      "patch": {
+        "tags": [
+          "Bets"
+        ],
+        "summary": "Place Results",
+        "operationId": "PlaceResults",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "description": "",
+                "example": [
+                  {
+                    "option": 1,
+                    "result": 2
+                  },
+                  {
+                    "option": 2,
+                    "result": 0
+                  },
+                  {
+                    "option": 3,
+                    "result": 4
+                  }
+                ],
+                "items": {
+                  "$ref": "#/components/schemas/PlaceResultsRequest"
+                }
+              },
+              "example": [
+                {
+                  "option": 1,
+                  "result": 2
+                },
+                {
+                  "option": 2,
+                  "result": 0
+                },
+                {
+                  "option": 3,
+                  "result": 4
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/docs/api-docs": {
+      "get": {
+        "tags": [
+          "Docs"
+        ],
+        "summary": "Get Docs",
+        "operationId": "GetDocs",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "deprecated": false
+      }
     }
   },
-  "paths": {
-    
-  },
   "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
+    "schemas": {
+      "LoginRequest": {
+        "title": "LoginRequest",
+        "required": [
+          "password",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "username": "will",
+          "password": "123mudar"
+        }
+      },
+      "DepositbyUserRequest": {
+        "title": "DepositbyUserRequest",
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "amount": 2800
+        }
+      },
+      "WithdrawbyUserRequest": {
+        "title": "WithdrawbyUserRequest",
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "amount": 300
+        }
+      },
+      "BetbyUserRequest": {
+        "title": "BetbyUserRequest",
+        "required": [
+          "amount",
+          "betId"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "betId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "amount": 450,
+          "betId": 3
+        }
+      },
+      "CreateUsersRequest": {
+        "title": "CreateUsersRequest",
+        "required": [
+          "address",
+          "birthdate",
+          "city",
+          "countryId",
+          "documentId",
+          "email",
+          "firstName",
+          "gender",
+          "lastName",
+          "password",
+          "phone",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string"
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "city": {
+            "type": "string"
+          },
+          "documentId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "username": "diana ",
+          "password": "123mudar",
+          "firstName": "Diana",
+          "lastName": "Oliveira",
+          "phone": "15 99232-2321",
+          "email": "diana@gmail.com",
+          "address": "Rua teste, 199 - Apto 1, Bloco A",
+          "gender": "female",
+          "birthdate": "1989-06-05",
+          "countryId": 15,
+          "city": "Sorocaba",
+          "documentId": "123.123.123-23"
+        }
+      },
+      "PlaceResultsRequest": {
+        "title": "PlaceResultsRequest",
+        "required": [
+          "option",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "option": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "result": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "option": 1,
+          "result": 2
+        }
+      },
+      "CreateUsersRequest1": {
+        "title": "CreateUsersRequest1",
+        "required": [
+          "address",
+          "birthdate",
+          "city",
+          "countryId",
+          "documentId",
+          "email",
+          "firstName",
+          "gender",
+          "lastName",
+          "password",
+          "phone",
+          "role",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "birthdate": {
+            "type": "string"
+          },
+          "countryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "city": {
+            "type": "string"
+          },
+          "documentId": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "username": "didiana ",
+          "password": "123mudar",
+          "role": "admin",
+          "firstName": "Diana",
+          "lastName": "Oliveira",
+          "phone": "15 99232-2321",
+          "email": "didiana@gmail.com",
+          "address": "Rua teste, 199 - Apto 1, Bloco A",
+          "gender": "female",
+          "birthdate": "1989-06-05",
+          "countryId": 15,
+          "city": "Sorocaba",
+          "documentId": "111.123.123-23"
+        }
       }
     }
   }

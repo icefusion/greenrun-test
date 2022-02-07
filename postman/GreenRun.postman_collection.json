@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "8d0d4683-3d6b-44d6-85e3-a7b01f8c21b0",
+		"name": "GreenRun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"will\",\n    \"password\": \"123mudar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:9090/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Balance By User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/transactions/balance/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Transactions By User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/transactions/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Transactions By User and Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/transactions/1/category/bet"
+							},
+							"response": []
+						},
+						{
+							"name": "Deposit by User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 2800\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:9090/transactions/user/2/deposit"
+							},
+							"response": []
+						},
+						{
+							"name": "Withdraw by User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 300\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:9090/transactions/user/2/withdraw"
+							},
+							"response": []
+						},
+						{
+							"name": "Bet by User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 450,\n    \"betId\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:9090/transactions/user/2/bet"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Create Users",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"diana \",  \n    \"password\": \"123mudar\", \n    \"firstName\": \"Diana\", \n    \"lastName\": \"Oliveira\", \n    \"phone\": \"15 99232-2321\", \n    \"email\": \"diana@gmail.com\",\n    \"address\": \"Rua teste, 199 - Apto 1, Bloco A\", \n    \"gender\": \"female\", \n    \"birthdate\": \"1989-06-05\", \n    \"countryId\": 15, \n    \"city\": \"Sorocaba\",\n    \"documentId\": \"123.123.123-23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:9090/users"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Bets",
+					"item": [
+						{
+							"name": "Get Bets",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/bets"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Bets ByEvent",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/bets/event/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Bets by Sport",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/bets/sport/basketball"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Bet Status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": "localhost:9090/admin/bets/1/status/cancelled"
+							},
+							"response": []
+						},
+						{
+							"name": "Place Results",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[  \n    {\n        \"option\": 1,\n        \"result\": 2 \n    },\n    {\n        \"option\": 2,\n        \"result\": 0 \n    },\n    {\n        \"option\": 3,\n        \"result\": 4 \n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:9090/admin/bets/results/event/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Get Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/transactions"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions By User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/transactions/user/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transactions By User and Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/transactions/user/1/category/bet"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Balance by User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:9090/admin/transactions/balance/user/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Update User Status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": "localhost:9090/admin/users/1/status/blocked"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Users",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"didiana \",  \n    \"password\": \"123mudar\", \n    \"role\": \"admin\", \n    \"firstName\": \"Diana\", \n    \"lastName\": \"Oliveira\", \n    \"phone\": \"15 99232-2321\", \n    \"email\": \"didiana@gmail.com\",\n    \"address\": \"Rua teste, 199 - Apto 1, Bloco A\", \n    \"gender\": \"female\", \n    \"birthdate\": \"1989-06-05\", \n    \"countryId\": 15, \n    \"city\": \"Sorocaba\",\n    \"documentId\": \"111.123.123-23\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:9090/admin/users"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Docs",
+			"item": [
+				{
+					"name": "Get Docs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:9090/docs/api-docs"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
