@@ -25,6 +25,18 @@ Linux e macOS:
 <yarn dev>
 ```
 
+## Server Access
+
+```
+<http://54.94.62.172:3000>
+```
+
+## Documentation
+
+To access the documentation follow this link:
+
+[DOCUMENTATION](http://54.94.62.172:3000/docs/api-docs/)
+
 ## 📝 License
 
 This project is under license. See the file [LICENSE](LICENSE.md) for more details.
