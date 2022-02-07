@@ -1,4 +1,5 @@
 export interface ITokenRequest {
-  userId: number;
-  userUsername: string;
+  id: number;
+  username: string;
+  role: string;
 }

@@ -10,6 +10,11 @@
       "url": "https://localhost:9090"
     }
   ],
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
   "tags": [
     {
       "name": "Auth"
@@ -44,7 +49,7 @@
                 "$ref": "#/components/schemas/LoginRequest"
               },
               "example": {
-                "username": "will",
+                "username": "diana",
                 "password": "123mudar"
               }
             }
@@ -335,7 +340,7 @@
                 "$ref": "#/components/schemas/CreateUsersRequest1"
               },
               "example": {
-                "username": "didiana ",
+                "username": "didiana",
                 "password": "123mudar",
                 "role": "admin",
                 "firstName": "Diana",
@@ -519,7 +524,7 @@
           }
         },
         "example": {
-          "username": "will",
+          "username": "diana",
           "password": "123mudar"
         }
       },
@@ -731,7 +736,7 @@
           }
         },
         "example": {
-          "username": "didiana ",
+          "username": "didiana",
           "password": "123mudar",
           "role": "admin",
           "firstName": "Diana",
@@ -745,6 +750,12 @@
           "city": "Sorocaba",
           "documentId": "111.123.123-23"
         }
+      }
+    },
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   }

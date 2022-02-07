@@ -6,21 +6,21 @@ class UserRepository {
   {
     const result = await knex('users')
       .where('username', username)
-      .select('id', 'username', 'first_name', 'last_name', 'password')
+      .select('id', 'username', 'first_name', 'last_name', 'password', 'role')
       .first();
 
-    if (result) {
-      return JSON.parse(JSON.stringify(result));
+    if (!result) {
+      return {
+        id: 0,
+        username: '',
+        first_name: '',
+        last_name: '',
+        password: '',
+        role: ''
+      }
     }
 
-    return {
-      id: 0,
-      username: '',
-      first_name: '',
-      last_name: '',
-      password: ''
-    }
-      
+    return JSON.parse(JSON.stringify(result));
   }
   
 }

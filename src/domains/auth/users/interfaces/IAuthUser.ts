@@ -4,4 +4,5 @@ export interface IAuthUser {
   first_name: string;
   last_name: string;
   password: string;
+  role: string;
 }

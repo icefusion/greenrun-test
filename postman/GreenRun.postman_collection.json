@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"will\",\n    \"password\": \"123mudar\"\n}",
+							"raw": "{\n    \"username\": \"diana\",\n    \"password\": \"123mudar\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -38,7 +38,13 @@
 							"name": "Balance By User",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJkaWFuYSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjQ0MjY5MDM1LCJleHAiOjE2NDQzNTU0MzUsInN1YiI6IjMifQ.CRbPUBQpAjPaAimpRCGHn_MbJymaDlzWzTxcAPhKszE",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/transactions/balance/1"
 							},
 							"response": []
@@ -47,7 +53,13 @@
 							"name": "Transactions By User",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/transactions/1"
 							},
 							"response": []
@@ -56,7 +68,13 @@
 							"name": "Transactions By User and Category",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/transactions/1/category/bet"
 							},
 							"response": []
@@ -65,7 +83,13 @@
 							"name": "Deposit by User",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"amount\": 2800\n}",
@@ -83,7 +107,13 @@
 							"name": "Withdraw by User",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"amount\": 300\n}",
@@ -101,7 +131,13 @@
 							"name": "Bet by User",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"amount\": 450,\n    \"betId\": 3\n}",
@@ -124,7 +160,13 @@
 							"name": "Create Users",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"username\": \"diana \",  \n    \"password\": \"123mudar\", \n    \"firstName\": \"Diana\", \n    \"lastName\": \"Oliveira\", \n    \"phone\": \"15 99232-2321\", \n    \"email\": \"diana@gmail.com\",\n    \"address\": \"Rua teste, 199 - Apto 1, Bloco A\", \n    \"gender\": \"female\", \n    \"birthdate\": \"1989-06-05\", \n    \"countryId\": 15, \n    \"city\": \"Sorocaba\",\n    \"documentId\": \"123.123.123-23\"\n}",
@@ -152,7 +194,13 @@
 							"name": "Get Bets",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/bets"
 							},
 							"response": []
@@ -161,7 +209,13 @@
 							"name": "Get Bets ByEvent",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/bets/event/1"
 							},
 							"response": []
@@ -170,7 +224,13 @@
 							"name": "Get Bets by Sport",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/bets/sport/basketball"
 							},
 							"response": []
@@ -179,7 +239,13 @@
 							"name": "Update Bet Status",
 							"request": {
 								"method": "PATCH",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/bets/1/status/cancelled"
 							},
 							"response": []
@@ -188,7 +254,13 @@
 							"name": "Place Results",
 							"request": {
 								"method": "PATCH",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "[  \n    {\n        \"option\": 1,\n        \"result\": 2 \n    },\n    {\n        \"option\": 2,\n        \"result\": 0 \n    },\n    {\n        \"option\": 3,\n        \"result\": 4 \n    }\n]",
@@ -211,7 +283,13 @@
 							"name": "Get Transactions",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/transactions"
 							},
 							"response": []
@@ -220,7 +298,13 @@
 							"name": "Get Transactions By User",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/transactions/user/1"
 							},
 							"response": []
@@ -229,7 +313,13 @@
 							"name": "Get Transactions By User and Category",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/transactions/user/1/category/bet"
 							},
 							"response": []
@@ -238,7 +328,13 @@
 							"name": "Get Balance by User",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/transactions/balance/user/1"
 							},
 							"response": []
@@ -252,7 +348,13 @@
 							"name": "Update User Status",
 							"request": {
 								"method": "PATCH",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"url": "localhost:9090/admin/users/1/status/blocked"
 							},
 							"response": []
@@ -261,10 +363,16 @@
 							"name": "Create Users",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJkaWRpYW5hIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQ0MjY4OTI0LCJleHAiOjE2NDQzNTUzMjQsInN1YiI6IjUifQ.llIBB8N0CwYwYbUn6ZZnXP9xnntOyUaDQ8vFB63tE3g",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"didiana \",  \n    \"password\": \"123mudar\", \n    \"role\": \"admin\", \n    \"firstName\": \"Diana\", \n    \"lastName\": \"Oliveira\", \n    \"phone\": \"15 99232-2321\", \n    \"email\": \"didiana@gmail.com\",\n    \"address\": \"Rua teste, 199 - Apto 1, Bloco A\", \n    \"gender\": \"female\", \n    \"birthdate\": \"1989-06-05\", \n    \"countryId\": 15, \n    \"city\": \"Sorocaba\",\n    \"documentId\": \"111.123.123-23\"\n}",
+									"raw": "{\n    \"username\": \"didiana\",  \n    \"password\": \"123mudar\", \n    \"role\": \"admin\", \n    \"firstName\": \"Diana\", \n    \"lastName\": \"Oliveira\", \n    \"phone\": \"15 99232-2321\", \n    \"email\": \"didiana@gmail.com\",\n    \"address\": \"Rua teste, 199 - Apto 1, Bloco A\", \n    \"gender\": \"female\", \n    \"birthdate\": \"1989-06-05\", \n    \"countryId\": 15, \n    \"city\": \"Sorocaba\",\n    \"documentId\": \"111.123.123-23\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
