@@ -21,7 +21,23 @@ class BetsService {
   }
 
   public async updateBetsStatus(id: number, status: string): Promise<any> {
-    return await this.betsRepository.updateBetsStatus(id, status);  
+    const bet = await this.betsRepository.getBetsById(id);
+
+    if (!bet) {
+      return 'Not Found Bet';
+    }
+
+    if (bet.status === 'settled') {
+      return 'Not Allowed, Bet already settled.';
+    }
+
+    const updated = await this.betsRepository.updateBetsStatus(id, status); 
+
+    if (!updated) {
+      return 'Not Updated';
+    }
+
+    return 'Successfully updated';
   }
 
   public async setResultsByEvent(id: number, request: IResultsRequest[]): Promise<any> {
