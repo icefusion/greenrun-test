@@ -4,7 +4,7 @@ export interface IUpdateUserDbRequest {
   phone: string;
   address: string;
   gender: string;
-  birth_date: string;
+  birthdate: string;
   country_id: number;
   city: string;
   updated_at: string;

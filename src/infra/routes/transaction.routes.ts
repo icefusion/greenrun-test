@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { TransactionController } from 'domains/users/transactions/controllers/TransactionController';
 
-import { AdminAuthMiddleware } from '../middlewares/AdminAuthMiddleware';
 import { UserAuthMiddleware } from '../middlewares/UserAuthMiddleware';
 
 const transactionRouter = Router();

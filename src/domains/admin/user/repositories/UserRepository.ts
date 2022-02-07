@@ -1,4 +1,6 @@
 import { knex } from "infra/database/knex";
+import { IInsertUserDbRequest } from '../interfaces/IInsertUserDbRequest';
+import { IUpdateUserDbRequest } from "../interfaces/IUpdateUserDbRequest";
 
 class UserRepository {
   public async updateStatusUser(userId: number, status: string) {
@@ -30,6 +32,12 @@ class UserRepository {
     return await knex('users')
       .where("id", userId)
       .update(request);
+  }
+
+  public async create(request: IInsertUserDbRequest) {
+    return await knex('users')
+      .insert(request)
+      .returning('id');
   }
 }
 
