@@ -1,7 +1,6 @@
 import { UserController } from 'domains/users/users/controllers/UserController';
 import { Router } from 'express';
 
-import { AdminAuthMiddleware } from '../middlewares/AdminAuthMiddleware';
 import { UserAuthMiddleware } from '../middlewares/UserAuthMiddleware';
 
 const userRouter = Router();
