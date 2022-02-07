@@ -54,6 +54,11 @@ class TransactionsRepository {
 
     return JSON.parse(JSON.stringify(result));
   }
+
+  public async setPayment(data: any) {
+    return await knex('transactions')
+      .insert(data);
+  }
 }
 
 export { TransactionsRepository }

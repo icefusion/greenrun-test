@@ -33,6 +33,16 @@ class BetsController {
 
     return response.status(200).json({status: result});
   }
+
+  public async setResultsByEvent(request: Request, response: Response): Promise<Response> {
+    const { event } = request.params;
+
+    const results = request.body;
+  
+    const settled = await this.betsService.setResultsByEvent(event, results);
+
+    return response.status(200).json({status: settled});
+  }
 }
 
 export { BetsController };

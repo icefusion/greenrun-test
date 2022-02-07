@@ -1,4 +1,5 @@
 import { knex } from "infra/database/knex";
+import { IResultsRequest } from "../interfaces/IResultsRequest";
 
 class BetsRepository {
   public async getBets(): Promise<any> { 
@@ -76,6 +77,54 @@ class BetsRepository {
     } catch (err) {
       return false;
     } 
+  }
+
+  public async setResultsByEvent(id: number, request: IResultsRequest): Promise<any> { 
+    try {
+      const result = await knex('bets')
+        .where('event_id', id)
+        .andWhere('bet_option', request.option)
+        .update({
+          result: request.result
+        })
+
+      if (!result) {
+        return false;
+      }
+
+      return true;
+    } catch (err) {
+      return false;
+    } 
+  }
+
+  public async getWinner(id: number, option: number) {
+    try {
+      const result = await knex('bets')
+        .where('event_id', id)
+        .andWhere('bet_option', option)
+        .andWhere('deleted', 0)
+        .andWhere('status', 'active')
+        .select(
+          'id',
+          'bet_option',
+          'sport',
+          'status',
+          'name',
+          'event_id',
+          'odd',
+          'result'
+        )
+        .first();
+
+        if (!result) {
+          return false;
+        }
+
+        return JSON.parse(JSON.stringify(result));
+    } catch (err) {
+      return false;
+    }
   }
 }
 

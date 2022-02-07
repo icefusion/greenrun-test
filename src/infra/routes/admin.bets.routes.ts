@@ -24,5 +24,9 @@ adminBetsRouter.patch('/:id/status/:status', async (request, response) => {
   return betsController.updateBetsStatus(request, response);
 });
 
+adminBetsRouter.patch('/results/event/:event', async (request, response) => {
+  return betsController.setResultsByEvent(request, response);
+});
+
 
 export { adminBetsRouter };
